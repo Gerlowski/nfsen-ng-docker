@@ -4,7 +4,7 @@ Docker setup for running nfsen-ng (Netflow visualizer) and nfdump (Netflow/Sflow
 
 ## Installation
 
-1. git clone https://github.com/dircr/nfsen-ng-docker.git
+1. git clone https://github.com/Gerlowski/nfsen-ng-docker.git
 2. verify ports and paths in docker-compose.yaml
 
 ## Usage
