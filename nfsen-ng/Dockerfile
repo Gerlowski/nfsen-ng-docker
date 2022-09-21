@@ -14,6 +14,7 @@ RUN git clone https://github.com/mbolli/nfsen-ng.git .
 COPY settings.php backend/settings/settings.tmpl
 COPY entrypoint.sh /tmp/
 
+RUN printf '[PHP]\ndate.timezone = "Europe/Warsaw"\n' > /usr/local/etc/php/conf.d/tzone.ini
 RUN chown -R www-data:www-data .
 RUN chmod +x backend/cli.php /tmp/entrypoint.sh
 
