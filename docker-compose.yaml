@@ -4,18 +4,22 @@ services:
 
   nfsen:
     build: nfsen-ng
+    environment:
+      TZ: "Europe/Warsaw"
     ports:
-    - 81:80
+    - 80:80
     volumes:
     - ./profiles-data:/var/nfdump/profiles-data
     - ./sources.conf:/tmp/sources.conf:ro
-    restart: unless-stopped
+    restart: always
     
   nfdump:
     build: nfdump
+    environment:
+      TZ: "Europe/Warsaw"    
     ports:
-    - 9000-9099:9000-9099/udp
+    - 2055:2055/udp
     volumes:
     - ./profiles-data:/data
     - ./sources.conf:/tmp/sources.conf:ro
-    restart: unless-stopped
+    restart: always
