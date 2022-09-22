@@ -16,7 +16,7 @@ COPY entrypoint.sh /tmp/
 
 RUN printf '[PHP]\ndate.timezone = "Europe/Warsaw"\n' > /usr/local/etc/php/conf.d/tzone.ini
 RUN printf 'admin:$apr1$A1iD8DJn$SAo1VLHzgV2eHtrbxmQiZ0' > /etc/apache2/.htpasswd
-RUN printf 'AuthType Basic\nAuthName \"Your authorization required message.\"\\nAuthUserFile /etc/apache2/.htpasswd\nrequire valid-user' > /var/www/html/frontend/.htaccess
+RUN printf 'AuthType Basic\nAuthName "Your authorization required message."\nAuthUserFile /etc/apache2/.htpasswd\nrequire valid-user' > /var/www/html/frontend/.htaccess
 RUN chown -R www-data:www-data .
 RUN chmod +x backend/cli.php /tmp/entrypoint.sh
 
